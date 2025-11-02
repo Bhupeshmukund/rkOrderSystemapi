@@ -111,7 +111,12 @@ app.delete("/api/sizes/:id", async (req, res) => {
 // ====================================
 // ⚡ Start Server (only after DB connects)
 // ====================================
-function startServer() {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-}
+// function startServer() {
+//   const PORT = process.env.PORT || 5000;
+//   app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+// }
+// ✅ Listen on provided PORT
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
